@@ -1,0 +1,25 @@
+.navigation__category {
+    ul {
+        display: flex;
+
+        li {
+            font-size: 28px;
+            color: white;
+            background: black;
+            border: 3px solid #17b7db;
+            border-radius: 15px;
+            padding: 3px 10px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        .active {
+            color: black;
+            background: white;
+            transition: 0.4s;
+        }
+    }
+
+
+
+}

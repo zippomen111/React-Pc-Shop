@@ -1,0 +1,36 @@
+.header {
+    background-color: aqua;
+
+    &__logo {
+        cursor: pointer;
+
+        img {
+            height: 84px;
+        }
+
+    }
+
+    &__cart {
+        &--line {
+            width: 1px;
+            height: 25px;
+            background-color: rgba(255, 255, 255, 0.25);
+            margin-left: 14px;
+            margin-right: 14px;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 7px 30px;
+            background-color: red;
+            border-radius: 15px;
+
+            span {
+                color: white;
+            }
+
+        }
+    }
+}
