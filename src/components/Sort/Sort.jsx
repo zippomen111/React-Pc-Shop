@@ -10,7 +10,7 @@ function Sort() {
     const [isOpen, setIsOpen] = useState(false)
     const sortId = useSelector((state) => state.filterSlice.sort)
     const dispatch = useDispatch()
-    console.log(sortId)
+
     const onClickListItem = (item, index) => {
         dispatch(setSortId(item))
         dispatch(setSortIndex(index))
