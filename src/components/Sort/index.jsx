@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setSortId } from '../../redux/slices/filter'
 import { setSortIndex } from '../../redux/slices/filter'
 
-import "./index.scss"
+import style from "./Sort.module.scss"
 
-function Sort() {
+export const Sort = () => {
     const sortList = ["rating", "price", "title"]
     const [isOpen, setIsOpen] = useState(false)
     const sortId = useSelector((state) => state.filterSlice.sort)
@@ -18,20 +18,20 @@ function Sort() {
     }
 
     return (
-        <div className="sort">
+        <div className={style.root}>
             <b>Sort by: </b>
             <span onClick={() => setIsOpen(!isOpen)}>{sortId.name}</span>
             <ul>
                 {
                     isOpen && (
                         //order items render
-                        <div className="sort__popup">
+                        <div className={style.popup}>
                             {
                                 sortList.map((item, index) => (
                                     <li
                                         key={index}
                                         onClick={() => onClickListItem(item, index)}
-                                        className={sortId.id === index ? "active" : ""}>
+                                        className={sortId.id === index ? `${style.active}` : ""}>
                                         {item}
                                     </li>
                                 ))
@@ -44,5 +44,3 @@ function Sort() {
     )
 
 }
-
-export default Sort

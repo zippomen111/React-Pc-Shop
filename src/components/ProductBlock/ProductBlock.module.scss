@@ -1,10 +1,9 @@
-.products {
-    &__card-item {
-        width: 250px;
-        background: rgb(211, 192, 192);
-    }
+.root {
 
-    &__image {
+    width: 250px;
+    background: rgb(211, 192, 192);
+
+    .image {
         height: 250px;
     }
 
@@ -14,11 +13,11 @@
         display: inline-block;
     }
 
-    &__card-text {
+    .text {
         padding: 10px;
     }
 
-    &__selector {
+    .selector {
         display: inline-block;
         text-align: center;
         line-height: 24px;
@@ -36,7 +35,7 @@
         margin: 15px 0 15px;
     }
 
-    &__button {
+    .button {
         margin-left: 2px;
         margin-top: 5px;
         display: block;
@@ -46,10 +45,10 @@
         background-color: rgb(38, 189, 38);
         font-size: 15px;
     }
-}
 
-.active {
-    color: black;
-    background-color: white;
-    border: 1px solid black;
+    .active {
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+    }
 }

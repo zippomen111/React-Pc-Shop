@@ -1,4 +1,4 @@
-.paginate {
+.root {
     li {
         display: inline-block;
 
@@ -24,7 +24,7 @@
     :global {
         .selected {
             a {
-                background-color: #fe5f1e;
+                background-color: #fe5f1e !important;
                 color: #fff;
             }
         }

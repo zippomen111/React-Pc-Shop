@@ -2,17 +2,17 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { setCategoryId } from '../../redux/slices/filter';
 
-import "./index.scss"
+import styles from "./Category.module.scss"
 
 const categoryList = ["All", "Monitors", "Mices", "Keyboards", "Headsets"]
 
-function Category() {
+export const Category = () => {
 
     const categoryId = useSelector((state) => state.filterSlice.categoryId)
     const dispatch = useDispatch()
 
     return (
-        <div className="navigation__category">
+        <div className={styles.root}>
             <ul>
                 {
                     categoryList.map((item, index) => (
@@ -30,4 +30,3 @@ function Category() {
     )
 }
 
-export default Category
