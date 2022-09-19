@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+.content {
+    min-height: calc(100vh - 88px);
+    background-color: #fff;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -26,7 +31,7 @@ h2 {
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 1440px;
+    max-width: 1200px;
 }
 
 .navigation {
