@@ -42,5 +42,4 @@ export const Sort = () => {
             </ul>
         </div>
     )
-
 }

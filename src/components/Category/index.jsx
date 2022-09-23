@@ -21,7 +21,7 @@ export const Category = () => {
                         <li
                             key={index}
                             onClick={() => dispatch(setCategoryId(index))}
-                            className={categoryId === index ? 'active' : ''}>
+                            className={categoryId === index ? `${styles.active}` : ''}>
                             {item}
                         </li>))
                 }
