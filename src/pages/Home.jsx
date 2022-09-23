@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setItems } from '../redux/slices/filter';
 import axios from 'axios';
 import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
@@ -9,13 +10,14 @@ import { ProductBlock } from '../components/ProductBlock';
 import { PaginationBlock } from '../components/Pagination';
 
 export const Home = () => {
-    const [items, setItems] = useState([])
+    const items = useSelector((state) => state.filterSlice.items)
     const currentPage = useSelector((state) => state.filterSlice.currentPage)
     const categoryId = useSelector((state) => state.filterSlice.categoryId)
     const sortId = useSelector((state) => state.filterSlice.sort.name)
     const BASE_URL = 'https://62fbd962abd610251c12510e.mockapi.io/PC_Items?'
     const category = categoryId > 0 ? (categoryId) : ''
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     useEffect(() => {
         //axios fetch data
@@ -23,10 +25,10 @@ export const Home = () => {
         axios.get(
             BASE_URL + `&page=${currentPage}&limit=${4}&category=${category}&orderBy=${sortId}`
         ).then((res) => {
-            setItems(res.data)
-        })
-    }, [category, sortId, currentPage])
+            dispatch(setItems(res.data))
 
+        })
+    }, [category, sortId, currentPage, dispatch])
     //url params add
     useEffect(() => {
         const queryString = qs.stringify({
@@ -34,7 +36,6 @@ export const Home = () => {
             category,
             sortId
         })
-        console.log(currentPage, category, sortId)
         navigate(`?${queryString}`)
     }, [category, sortId, currentPage, navigate])
 
